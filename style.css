@@ -1,0 +1,89 @@
+.container {
+	display: flex;
+	/* flex-direction: column; */
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-family: sans-serif;
+	height: 100vh;
+	/* width: 100vh; */
+	background-color: rgb(95, 161, 95);
+}
+
+.playercontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -70%;
+}
+
+.computercontainer {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: center;
+	justify-content: center;
+}
+
+.box {
+	display: flex;
+	flex-direction: row;
+	background-color: brown;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+}
+
+.rockbox {
+	background-color: brown;
+}
+
+.paperbox {
+	background-color: gray;
+}
+
+.scissorsbox {
+	background-color: steelblue;
+}
+
+.roundResults {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	width: 342px;
+	height: 100px;
+	background-color: khaki;
+	margin: 10px;
+	flex-direction: column;
+	align-items: center;
+}
+
+p {
+	display: flex;
+	align-content: center;
+	/* justify-content: left; */
+	margin: -1px;
+	padding: 6px;
+}
+
+#resultptag {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.scoreBox {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	width: 342px;
+	height: 100px;
+	background-color: lavender;
+	margin: 10px;
+	text-align: center;
+	align-items: center;
+}
