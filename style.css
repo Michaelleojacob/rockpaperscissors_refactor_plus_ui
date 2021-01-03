@@ -1,5 +1,8 @@
 .container {
 	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
 	/* flex-direction: column; */
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -8,9 +11,10 @@
 	font-size: 20px;
 	font-family: sans-serif;
 	height: 100vh;
-	/* width: 100vh; */
+	width: 100%;
 	background-color: black;
 	color: white;
+	z-index: 3;
 }
 
 .playercontainer {
@@ -71,5 +75,58 @@
 	height: 100px;
 	text-align: center;
 	align-items: center;
-	margin: 5px;
+}
+
+.startScreen {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: black;
+	color: white;
+	z-index: 200;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	/* line-height: 90vh; */
+	font-size: 30px;
+	flex-direction: column;
+}
+
+.button {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	/* background-color: #4caf50; Green */
+	background-color: black;
+	border: 2px solid #4caf50;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 30px;
+	cursor: pointer;
+	width: 50%;
+	height: 8%;
+	z-index: 201;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 4px;
+}
+
+button:hover {
+	background-color: #4caf50;
+	color: white;
+}
+
+button:focus {
+	background-color: #4caf50;
+	outline: none;
+}
+
+.display-none {
+	display: none;
 }

@@ -16,9 +16,18 @@ let pTagPlayerSelected = document.querySelector('#playerSelected');
 let pTagBotSelected = document.querySelector('#botselected');
 let pTagResult = document.querySelector('#resultptag');
 let gameResultDisplay = document.querySelector('#scoreBox');
-pTagPlayerSelected.textContent = `You picked:`
-pTagBotSelected.textContent = `Bot picked:`
-gameResultDisplay.textContent = `Score:`
+pTagPlayerSelected.textContent = `You picked:`;
+pTagBotSelected.textContent = `Bot picked:`;
+gameResultDisplay.textContent = `Score:`;
+const displayRound = document.querySelector("#round");
+const startbtn = document.querySelector('.button');
+const startScreen = document.querySelector('.startScreen');
+
+startbtn.addEventListener("click", function (e){
+    if(e.target.textContent === `start`){
+        startScreen.classList.add('display-none');
+    }
+})
 
 
 //!functions to increase score
@@ -66,35 +75,38 @@ function getComputerSelect(){
 }
 
 //!code that allows boxes to be clicked on and starts a round.
-boxes.forEach(box => box.addEventListener('click', function (e){
-
-    if (e.target.textContent === "Rock"){
-        let playerSelection = rock;
-        pTagPlayerSelected.textContent = `You selected: ${playerSelection}`;
-        playRound(playerSelection, getComputerSelect());
+// function gameStart(){
+    boxes.forEach(box => box.addEventListener('click', function (e){
         
-    }
-    else if(e.target.textContent === "Paper"){
-        let playerSelection = paper;
-        pTagPlayerSelected.textContent = `You selected: ${playerSelection}`
-        playRound(playerSelection, getComputerSelect());
-    }
-    else if(e.target.textContent === "Scissors"){
-        let playerSelection = scissors;
-        pTagPlayerSelected.textContent = `You selected: ${playerSelection}`
-        playRound(playerSelection, getComputerSelect());
-    }
-    else{
-        return;
-    }
-}));
-
+        if (e.target.textContent === "Rock"){
+            let playerSelection = rock;
+            pTagPlayerSelected.textContent = `You selected: ${playerSelection}`;
+            playRound(playerSelection, getComputerSelect());
+            
+        }
+        else if(e.target.textContent === "Paper"){
+            let playerSelection = paper;
+            pTagPlayerSelected.textContent = `You selected: ${playerSelection}`
+            playRound(playerSelection, getComputerSelect());
+        }
+        else if(e.target.textContent === "Scissors"){
+            let playerSelection = scissors;
+            pTagPlayerSelected.textContent = `You selected: ${playerSelection}`
+            playRound(playerSelection, getComputerSelect());
+        }
+        else{
+            return;
+        }
+    }));
+// }
+    
 
 //!round + game logic
 function playRound (playerSelection, computerSelection){   
     //?tie
     if (playerSelection === computerSelection){
         console.log("%cThe round ended in a draw!", "color:orange");
+        displayRound.textContent = `Draw`;
         draw();
     }
     
@@ -102,26 +114,32 @@ function playRound (playerSelection, computerSelection){
     if (playerSelection !== computerSelection){
         if((playerSelection === rock) && (computerSelection === paper)){
             console.log("%c" + roundLost, "color:red");
+            displayRound.textContent = `Bot won this round`;
             increaseComputerScore(); 
         }
         if((playerSelection === rock) && (computerSelection === scissors)){
             console.log("%c" + roundWin, "color: green");
+            displayRound.textContent = `Player won this round`;
             increasePlayerScore();
         }
         if((playerSelection === paper) && (computerSelection === rock)){
             console.log("%c" + roundWin, "color: green");
+            displayRound.textContent = `Player won this round`;
             increasePlayerScore();
         }
         if((playerSelection === paper) && (computerSelection === scissors)){
             console.log("%c" + roundLost, "color:red");
+            displayRound.textContent = `Bot won this round`;
             increaseComputerScore();
         }
         if((playerSelection === scissors) && (computerSelection === rock)){
             console.log("%c" + roundLost, "color:red");
+            displayRound.textContent = `Bot won this round`;
             increaseComputerScore();
         }
         if((playerSelection === scissors) && (computerSelection === paper)){
             console.log("%c" + roundWin, "color: green");
+            displayRound.textContent = `Player won this round`;
             increasePlayerScore();
         }
     }
@@ -131,32 +149,3 @@ function playRound (playerSelection, computerSelection){
 }
 
 
-
-
-
-
-
-// function game(){
-
-//     console.log(`final score ${scoreBoard}`)
-
-//     if( playerScore > computerScore){
-//         console.log("%cYou won the match!", "color:green; font-size: 25px");
-//         console.log(`to replay, you can type "game()" again and press enter, or simply press the "up" arrow key on your keyboard and then press enter.`)
-//     }
-//     if( playerScore < computerScore){
-//         console.log("%cYou lost the match.", "color:red; font-size: 25px");
-//         console.log(`to replay, you can type "game()" again and press enter, or simply press the "up" arrow key on your keyboard and then press enter.`)
-
-//     }
-//     if( playerScore === computerScore){
-
-//         console.log("%cThe match ended in a draw.", "color:orange; font-size: 25px" )
-//         console.log(`to replay, you can type "game()" again and press enter, or simply press the "up" arrow key on your keyboard and then press enter.`)
-//     }
-
-
-//     playerScore = 0;
-//     computerScore = 0;
-
-// }
