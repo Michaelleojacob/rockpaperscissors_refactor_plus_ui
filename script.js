@@ -15,18 +15,28 @@ let scoreBoard;
 let pTagPlayerSelected = document.querySelector('#playerSelected');
 let pTagBotSelected = document.querySelector('#botselected');
 let pTagResult = document.querySelector('#resultptag');
+let gameResultDisplay = document.querySelector('#scoreBox');
+pTagPlayerSelected.textContent = `You picked:`
+pTagBotSelected.textContent = `Bot picked:`
+gameResultDisplay.textContent = `Score:`
+
 
 //!functions to increase score
 function increasePlayerScore(){
     playerScore++;
-    scoreBoard = "Your score: " + playerScore + " Computer's score: " + computerScore + "\n \n";
+    scoreBoard = `Your score: ${playerScore} Bot's score: ${computerScore}`
     return scoreBoard;
 }
 //!functions to increase score
 function increaseComputerScore(){
     computerScore++;
-    scoreBoard = "Your score: " + playerScore + " Computer's score: " + computerScore + "\n \n";
+    scoreBoard = `Your score: ${playerScore} Bot's score: ${computerScore}`
     return scoreBoard
+}
+//!function for draw, for consistency
+function draw(){
+    scoreBoard = `Your score: ${playerScore} Bot's score: ${computerScore}`
+    return scoreBoard;
 }
 
 
@@ -51,27 +61,27 @@ function getComputerSelect(){
         computerSelection = scissors;
     }
     console.log("%cThe computer picked: " + computerSelection, "color:blue")
-    pTagBotSelected.innerText = `Bot selected: ${computerSelection}`;
+    pTagBotSelected.textContent = `Bot selected: ${computerSelection}`;
     return computerSelection;
 }
 
 //!code that allows boxes to be clicked on and starts a round.
 boxes.forEach(box => box.addEventListener('click', function (e){
 
-    if (e.target.innerText === "Rock"){
+    if (e.target.textContent === "Rock"){
         let playerSelection = rock;
-        pTagPlayerSelected.innerText = `You selected: ${playerSelection}`;
+        pTagPlayerSelected.textContent = `You selected: ${playerSelection}`;
         playRound(playerSelection, getComputerSelect());
         
     }
-    else if(e.target.innerText === "Paper"){
+    else if(e.target.textContent === "Paper"){
         let playerSelection = paper;
-        pTagPlayerSelected.innerText = `You selected: ${playerSelection}`
+        pTagPlayerSelected.textContent = `You selected: ${playerSelection}`
         playRound(playerSelection, getComputerSelect());
     }
-    else if(e.target.innerText === "Scissors"){
+    else if(e.target.textContent === "Scissors"){
         let playerSelection = scissors;
-        pTagPlayerSelected.innerText = `You selected: ${playerSelection}`
+        pTagPlayerSelected.textContent = `You selected: ${playerSelection}`
         playRound(playerSelection, getComputerSelect());
     }
     else{
@@ -85,6 +95,7 @@ function playRound (playerSelection, computerSelection){
     //?tie
     if (playerSelection === computerSelection){
         console.log("%cThe round ended in a draw!", "color:orange");
+        draw();
     }
     
     //?everything that is not a tie
@@ -114,8 +125,9 @@ function playRound (playerSelection, computerSelection){
             increasePlayerScore();
         }
     }
-    pTagResult.innerText = scoreBoard
     console.log(scoreBoard);
+    gameResultDisplay.textContent = scoreBoard;
+
 }
 
 
