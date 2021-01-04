@@ -23,10 +23,14 @@ const displayRound = document.querySelector("#round");
 const startbtn = document.querySelector('.button');
 const startScreen = document.querySelector('.startScreen');
 
+
+//!start button from splash screen to game screen!!!!
 startbtn.addEventListener("click", function (e){
     if(e.target.textContent === `start`){
         startScreen.classList.add('display-none');
+        container.classList.add('fadeIn');
     }
+    // return firstToFive();
 })
 
 
@@ -75,7 +79,8 @@ function getComputerSelect(){
 }
 
 //!code that allows boxes to be clicked on and starts a round.
-// function gameStart(){
+// function gameStart(boxes){
+    // boxes = document.querySelectorAll('.playerbox');
     boxes.forEach(box => box.addEventListener('click', function (e){
         
         if (e.target.textContent === "Rock"){
@@ -147,5 +152,9 @@ function playRound (playerSelection, computerSelection){
     gameResultDisplay.textContent = scoreBoard;
 
 }
+
+// function firstToFive (playerSelection, computerSelection, playerScore, computerScore){
+//     gameStart();
+// }
 
 

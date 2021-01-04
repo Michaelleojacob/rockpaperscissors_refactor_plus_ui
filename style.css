@@ -1,3 +1,7 @@
+* {
+	background: black;
+}
+
 .container {
 	display: flex;
 	position: fixed;
@@ -15,6 +19,15 @@
 	background-color: black;
 	color: white;
 	z-index: 3;
+	opacity: 0;
+	-webkit-transition: opacity 0.75s ease-in-out;
+	-moz-transition: opacity 0.75s ease-in-out;
+	-ms-transition: opacity 0.75s ease-in-out;
+	-o-transition: opacity 0.75s ease-in-out;
+	transition: opacity 0.75 ease-in-out;
+}
+.container.fadeIn {
+	opacity: 1;
 }
 
 .playercontainer {
@@ -93,6 +106,15 @@
 	/* line-height: 90vh; */
 	font-size: 30px;
 	flex-direction: column;
+	opacity: 1;
+	/* -webkit-transition: opacity 0.75s ease-in-out;
+	-moz-transition: opacity 0.75s ease-in-out;
+	-ms-transition: opacity 0.75s ease-in-out;
+	-o-transition: opacity 0.75s ease-in-out;
+	transition: opacity 0.75 ease-in-out; */
+}
+.startScreen.fadeOut {
+	opacity: 0;
 }
 
 .button {
@@ -129,4 +151,41 @@ button:focus {
 
 .display-none {
 	display: none;
+	/* display: flex; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: black;
+	color: white;
+	z-index: 200;
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+	/* line-height: 90vh; */
+	font-size: 30px;
+	flex-direction: column;
+}
+
+@keyframes transitionIn {
+	from {
+		opacity: 0;
+		transform: rotateX(-10deg);
+	}
+	to {
+		opacity: 1;
+		transform: rotateX(0);
+	}
+}
+
+@keyframes transitionOut {
+	from {
+		opacity: 1;
+		transform: rotateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: rotateX(-10deg);
+	}
 }
