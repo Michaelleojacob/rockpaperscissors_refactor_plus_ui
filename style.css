@@ -19,6 +19,7 @@
 	font-family: sans-serif;
 	height: 100vh;
 	width: 100%;
+
 	background-color: black;
 	color: white;
 	z-index: 3;
@@ -57,7 +58,8 @@
 	align-items: center;
 	justify-content: center;
 	margin: 5px;
-	background-color: gray;
+	background: gray;
+	border-radius: 4px;
 }
 
 .roundResults {
@@ -174,4 +176,41 @@ button:focus {
 
 #compScore {
 	margin: 10px;
+}
+
+.playing {
+	transform: scale(1.1);
+	border-color: #ffc600;
+	box-shadow: 0 0 1rem #ffc600;
+}
+
+#header {
+	width: 100%;
+	display: flex;
+	top: 0;
+	left: 0;
+	position: absolute;
+	/* background-color: white; */
+	z-index: 4000;
+	height: 50px;
+	justify-content: space-evenly;
+	font-size: 20px;
+	padding: 10px;
+	text-decoration: none !important;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	/* background-color: red; */
+	color: white;
+	text-align: center;
+	z-index: 5000;
+	font-size: 20px;
 }
