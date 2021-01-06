@@ -195,12 +195,12 @@ button:focus {
 	height: 50px;
 	justify-content: space-evenly;
 	font-size: 20px;
-	padding: 10px;
 	text-decoration: none !important;
 }
 
 a {
 	text-decoration: none !important;
+	margin-top: 20px;
 }
 
 .footer {
@@ -213,4 +213,5 @@ a {
 	text-align: center;
 	z-index: 5000;
 	font-size: 20px;
+	margin-bottom: 15px;
 }
