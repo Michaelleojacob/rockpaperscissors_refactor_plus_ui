@@ -14,7 +14,7 @@ computerPoints.textContent = 0;
 roundResults.textContent = "Results";
 
 //!start button from splash screen to game screen!!!!
-startbtn.addEventListener("click", function (e){
+startbtn.addEventListener("click", function (){
         startScreen.classList.add('display-none');
         container.classList.add('fadeIn');
         startGame();
