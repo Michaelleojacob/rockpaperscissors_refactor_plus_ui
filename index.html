@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./transition.css">
+    <!-- <link rel="stylesheet" href="./transition.css"> -->
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -27,30 +27,36 @@
     </div>
 
     <div class="container">
-        <div class="playercontainer">
+        <div>Player Picks:</div>
+        <div class="optionBtn"> 
             <div id="rock" class="rockbox box playerbox">Rock</div>
             <div id="paper" class="paperbox box playerbox">Paper</div>
             <div id="scissors" class="scissorsbox box playerbox">Scissors</div>
         </div>
 
 
+        <div>Bot Picks:</div>
         <div class="computercontainer">
             <div id="computerRock" class="rockbox box ">Rock</div>
             <div id="computerPaper" class="paperbox box ">Paper</div>
             <div id="computerScissors" class="scissorsbox box">Scissors</div>
         </div>
 
-        <div class="roundResults">
-            <div id="playerSelected"></div>
-            <br>
-            <div id="botselected"></div>
+        <div class="scores">
+            <div id="playerScore"></div>
+            <div id="compScore"></div>  
         </div>
-            
-        <div id="round"></div>
 
+        <div><span id="resultsLabel">Results</label></div>
+    
 
-        <div id="scoreBox" class="scoreBox"></div>
+            <div id="roundResults"></div>
+        
+        <div>
+         <button id="reset">Play Again!</button>
+       </div>
     </div>
+
 
 
 
