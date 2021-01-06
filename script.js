@@ -96,6 +96,11 @@ function resetGame(){
         compScore = 0;
         playerPoints.textContent = 0;
         computerPoints.textContent = 0;
+        roundResults.style.color ='white';
+        roundResults.textContent = "Results";
+
+
+
         
         startGame();
     })
