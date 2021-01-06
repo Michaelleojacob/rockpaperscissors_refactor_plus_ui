@@ -8,7 +8,10 @@ const optionBtn = document.querySelectorAll(`div.optionBtn`);
 let playerPoints = document.querySelector('#playerScore');
 let computerPoints = document.querySelector('#compScore');
 const roundResults = document.querySelector('#roundResults');
-const resetBtn = document.querySelector('#reset')
+const resetBtn = document.querySelector('#reset');
+playerPoints.textContent = 0;
+computerPoints.textContent = 0;
+roundResults.textContent = "Results";
 
 //!start button from splash screen to game screen!!!!
 startbtn.addEventListener("click", function (e){
@@ -89,7 +92,6 @@ function playRound (playerSelection, computerSelection) {
 
 function resetGame(){
     resetBtn.addEventListener('click', () =>{
-        container.classList.add('fadeIn');
         playerScore = 0;
         compScore = 0;
         playerPoints.textContent = 0;
