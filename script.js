@@ -98,10 +98,6 @@ function resetGame(){
         computerPoints.textContent = 0;
         roundResults.style.color ='white';
         roundResults.textContent = "Results";
-
-
-
-        
         startGame();
     })
 }

@@ -1,5 +1,7 @@
 ## This project is a continuation of The_Odin_Project curriculum.
 
+# live application: https://michaelleojacob.github.io/rockpaperscissors_refactor_plus_ui/
+
 # This project was an exercise in DOM manipulation.
 
 # Technologies used:
@@ -17,3 +19,7 @@
 > Splash Screen using a z-index trick.
 
 > Refactoring the code, the logic, and how and when things are called.
+
+# michaelleojacob@gmail.com
+
+# https://www.linkedin.com/public-profile/in/michael-leo-jacob
